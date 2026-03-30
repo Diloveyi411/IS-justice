@@ -4,6 +4,7 @@ import PathSelector from './components/PathSelector'
 import Services from './components/Services'
 import Comparison from './components/Comparison'
 import Stats from './components/Stats'
+import Pricing from './components/Pricing'
 import CaseStudies from './components/CaseStudies'
 import FounderQuote from './components/FounderQuote'
 import LeadForm from './components/LeadForm'
@@ -14,12 +15,13 @@ export default function App() {
     <>
       <Navbar />
       <Hero />
-      <PathSelector />
       <Services />
       <Comparison />
       <Stats />
+      <Pricing />
       <CaseStudies />
       <FounderQuote />
+      <PathSelector />
       <LeadForm />
       <Footer />
     </>

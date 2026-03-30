@@ -2,51 +2,55 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--gray-200);
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
 .navbar__inner {
   display: flex;
   align-items: center;
-  gap: 40px;
-  height: 64px;
+  height: 62px;
 }
 
 .navbar__logo {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  color: var(--text);
-  white-space: nowrap;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
 }
-.navbar__logo span {
-  color: var(--orange);
+
+.navbar__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .navbar__links {
   display: flex;
   list-style: none;
-  gap: 32px;
-  margin-left: auto;
+  gap: 2px;
+  margin-right: 20px;
 }
+
 .navbar__links a {
   font-size: 14px;
   font-weight: 500;
-  color: var(--gray-600);
-  transition: color 0.15s;
+  color: var(--gray-500);
+  padding: 7px 13px;
+  border-radius: 8px;
+  transition: all 0.12s;
+  display: block;
 }
 .navbar__links a:hover {
-  color: var(--text);
+  color: var(--black);
+  background: var(--gray-100);
 }
 
 .navbar__cta {
-  padding: 10px 20px;
-  font-size: 13px;
-  white-space: nowrap;
-  margin-left: auto;
+  padding: 9px 20px;
+  font-size: 14px;
+  border-radius: 8px;
 }
 
 .navbar__hamburger {
@@ -55,40 +59,30 @@
   gap: 5px;
   background: none;
   padding: 4px;
-  margin-left: auto;
 }
 .navbar__hamburger span {
   display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--text);
+  width: 20px;
+  height: 1.5px;
+  background: var(--black);
   border-radius: 2px;
+  transition: all 0.2s;
 }
 
 @media (max-width: 768px) {
   .navbar__links {
     display: none;
     position: absolute;
-    top: 64px;
-    left: 0;
-    right: 0;
+    top: 62px;
+    left: 0; right: 0;
     background: var(--white);
     flex-direction: column;
-    padding: 20px 24px;
-    gap: 20px;
-    border-bottom: 1px solid var(--gray-200);
-    margin-left: 0;
+    padding: 8px 16px 16px;
+    gap: 2px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    margin-right: 0;
   }
-  .navbar__links--open {
-    display: flex;
-  }
-  .navbar__links a {
-    font-size: 16px;
-  }
-  .navbar__cta {
-    display: none;
-  }
-  .navbar__hamburger {
-    display: flex;
-  }
+  .navbar__links--open { display: flex; }
+  .navbar__cta { display: none; }
+  .navbar__hamburger { display: flex; }
 }

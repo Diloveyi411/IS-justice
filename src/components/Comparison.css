@@ -1,139 +1,104 @@
 .comparison {
-  padding: 96px 0;
-  background: var(--dark);
+  padding: 112px 0;
+  background: #0A0A0A;
   color: var(--white);
-}
-
-.comparison__title {
-  color: var(--white);
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.comparison__sub {
-  text-align: center;
-  color: rgba(255,255,255,0.55);
-  font-size: 15px;
-  margin-bottom: 56px;
-}
-
-.comparison__table {
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px;
-  overflow: hidden;
 }
 
 .comparison__header {
-  display: grid;
-  grid-template-columns: 1.2fr 2fr 2fr;
-  gap: 0;
-  background: rgba(255,255,255,0.05);
-  padding: 14px 24px;
+  text-align: center;
+  margin-bottom: 64px;
 }
 
-.comparison__col-label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0 12px;
+.comparison__eyebrow { color: rgba(255,255,255,0.35); }
+
+.comparison__title {
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: var(--white);
+  margin-top: 14px;
+  margin-bottom: 14px;
+  line-height: 1.05;
 }
 
-.comparison__col-label--old {
+.comparison__sub {
+  font-size: 16px;
   color: rgba(255,255,255,0.4);
 }
 
-.comparison__col-label--new {
-  color: var(--orange);
+.comparison__table {
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  overflow: hidden;
 }
+
+.comparison__head {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr 2fr;
+  padding: 16px 28px;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.comparison__head-cell {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0 16px;
+}
+.comparison__head-cell:first-child { padding-left: 0; color: transparent; }
+.comparison__head-cell--old { color: rgba(255,255,255,0.3); }
+.comparison__head-cell--new { color: var(--orange); }
 
 .comparison__row {
   display: grid;
-  grid-template-columns: 1.2fr 2fr 2fr;
-  border-top: 1px solid rgba(255,255,255,0.07);
-  padding: 18px 24px;
-  gap: 0;
-  align-items: start;
+  grid-template-columns: 1.4fr 2fr 2fr;
+  padding: 20px 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  align-items: center;
 }
+.comparison__row:last-child { border-bottom: none; }
 
-.comparison__row-label {
+.comparison__label {
+  font-family: var(--font-display);
   font-size: 14px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.9);
-  padding-right: 16px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: -0.2px;
 }
 
 .comparison__cell {
   font-size: 14px;
-  line-height: 1.55;
-  padding: 0 12px;
+  line-height: 1.5;
+  padding: 0 16px;
 }
+.comparison__cell--old { color: rgba(255,255,255,0.3); }
+.comparison__cell--new { color: rgba(255,255,255,0.85); }
 
-.comparison__cell--old {
-  color: rgba(255,255,255,0.4);
-}
+.comparison__x { color: #EF4444; margin-right: 8px; }
+.comparison__check { color: #22C55E; margin-right: 8px; }
 
-.comparison__cell--new {
-  color: rgba(255,255,255,0.85);
-}
-
-.comparison__x {
-  color: #E05050;
-  margin-right: 6px;
-  font-weight: 700;
-}
-
-.comparison__check {
-  color: #4CAF50;
-  margin-right: 6px;
-  font-weight: 700;
-}
-
-.comparison__bottom {
+.comparison__footer {
   margin-top: 48px;
-  text-align: center;
-}
-
-.comparison__bottom-text {
-  font-size: 13px;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-}
-
-.comparison__tags {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.comparison__tags span {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.6);
-  padding: 6px 16px;
+.comparison__tag {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.4);
+  padding: 7px 16px;
   border-radius: 20px;
   font-size: 13px;
 }
 
 @media (max-width: 768px) {
-  .comparison__header,
-  .comparison__row {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-  .comparison__header {
-    display: none;
-  }
-  .comparison__cell {
-    padding: 0;
-  }
-  .comparison__row-label {
-    font-size: 13px;
-    color: rgba(255,255,255,0.55);
-    margin-bottom: 4px;
-  }
+  .comparison__head { display: none; }
+  .comparison__row { grid-template-columns: 1fr; gap: 6px; padding: 16px 20px; }
+  .comparison__label { color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .comparison__cell { padding: 0; }
 }

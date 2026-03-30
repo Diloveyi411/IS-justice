@@ -2,13 +2,13 @@ import './CaseStudies.css'
 
 const cases = [
   {
-    tag: 'E-commerce Leader',
+    tag: 'E-commerce',
     title: 'Z chaosu k prehľadu za 3 mesiace',
-    result: '+18% marža, zníženie daňovej záťaže o 23%',
+    result: '+18% marža, -23% daňová záťaž',
     desc: 'Klient nevedel kde mu unikajú peniaze. Nastavili sme reporting a daňovú optimalizáciu.',
   },
   {
-    tag: 'SRO',
+    tag: 'S.R.O.',
     title: 'Zakladanie s.r.o. za 5 dní',
     result: 'Žiadne fronty na úradoch',
     desc: 'Zaregistrovali sme spoločnosť, zriadili účtovníctvo a nastavili mzdovú agendu.',
@@ -16,7 +16,7 @@ const cases = [
   {
     tag: 'Mediácia',
     title: 'Obchodný spor vyriešený mimosúdne',
-    result: 'Uspori 12 000 € na súdnych trovách',
+    result: 'Úspora 12 000 € na súdnych trovách',
     desc: 'Mediáciou sme vyriešili spor medzi obchodnými partnermi bez súdu.',
   },
 ]
@@ -25,9 +25,10 @@ export default function CaseStudies() {
   return (
     <section className="cases" id="cases">
       <div className="container">
-        <p className="section-label">Pripadove studie</p>
-        <h2 className="section-title" style={{ marginBottom: '48px' }}>Výsledky, ktoré hovoria za nás</h2>
-
+        <div className="cases__header">
+          <p className="eyebrow">Prípadové štúdie</p>
+          <h2 className="cases__heading">Výsledky, ktoré hovoria za nás</h2>
+        </div>
         <div className="cases__grid">
           {cases.map((c, i) => (
             <div key={i} className="cases__card">
