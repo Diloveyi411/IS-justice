@@ -1,0 +1,139 @@
+.comparison {
+  padding: 96px 0;
+  background: var(--dark);
+  color: var(--white);
+}
+
+.comparison__title {
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.comparison__sub {
+  text-align: center;
+  color: rgba(255,255,255,0.55);
+  font-size: 15px;
+  margin-bottom: 56px;
+}
+
+.comparison__table {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.comparison__header {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr 2fr;
+  gap: 0;
+  background: rgba(255,255,255,0.05);
+  padding: 14px 24px;
+}
+
+.comparison__col-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 12px;
+}
+
+.comparison__col-label--old {
+  color: rgba(255,255,255,0.4);
+}
+
+.comparison__col-label--new {
+  color: var(--orange);
+}
+
+.comparison__row {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr 2fr;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 18px 24px;
+  gap: 0;
+  align-items: start;
+}
+
+.comparison__row-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  padding-right: 16px;
+}
+
+.comparison__cell {
+  font-size: 14px;
+  line-height: 1.55;
+  padding: 0 12px;
+}
+
+.comparison__cell--old {
+  color: rgba(255,255,255,0.4);
+}
+
+.comparison__cell--new {
+  color: rgba(255,255,255,0.85);
+}
+
+.comparison__x {
+  color: #E05050;
+  margin-right: 6px;
+  font-weight: 700;
+}
+
+.comparison__check {
+  color: #4CAF50;
+  margin-right: 6px;
+  font-weight: 700;
+}
+
+.comparison__bottom {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.comparison__bottom-text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.comparison__tags {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.comparison__tags span {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .comparison__header,
+  .comparison__row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .comparison__header {
+    display: none;
+  }
+  .comparison__cell {
+    padding: 0;
+  }
+  .comparison__row-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 4px;
+  }
+}
