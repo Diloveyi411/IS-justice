@@ -16,10 +16,7 @@ export default function Hero() {
           </p>
           <div className="hero__actions">
             <a href="#audit" className="btn btn-primary">
-              Začni 15-min audit zdarma
-            </a>
-            <a href="#services" className="btn btn-secondary">
-              Čo ponúkame
+              Získaj bezplatný audit
             </a>
           </div>
           <p className="hero__note">Odpoveď do 24 hodín. Bez záväzkov.</p>

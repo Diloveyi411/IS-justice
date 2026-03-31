@@ -33,7 +33,7 @@ export default function FounderQuote() {
           {members.map((m, i) => (
             <div key={i} className="founder__card">
               <div className="founder__photo-wrap">
-                <img src={m.photo} alt={m.alt} className="founder__photo" />
+                <img src={m.photo} alt={m.alt} className="founder__photo" loading="lazy" />
               </div>
               <div className="founder__body">
                 <p className="eyebrow founder__eyebrow">{m.eyebrow}</p>

@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800;9..40,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&family=Inter:wght@400;500;600&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -13,6 +10,7 @@
   --orange: #FF8C00;
   --orange-hover: #E07D00;
   --orange-pale: #FFF7ED;
+  --orange-gradient: linear-gradient(135deg, #FF8C00 0%, #FFB347 100%);
   --black: #0A0A0A;
   --gray-900: #111111;
   --gray-700: #2D2D2D;
@@ -50,6 +48,10 @@ h1, h2, h3, h4 {
   padding: 0 32px;
 }
 
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -68,13 +70,28 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary {
-  background: var(--orange);
+  background: var(--orange-gradient);
   color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.28), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.45s ease;
+}
+.btn-primary:hover::after {
+  left: 140%;
 }
 .btn-primary:hover {
-  background: var(--orange-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(255, 140, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(255, 140, 0, 0.35);
 }
 
 .btn-secondary {
@@ -91,7 +108,10 @@ h1, h2, h3, h4 {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--orange);
+  background: var(--orange-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .placeholder-img {

@@ -1,5 +1,5 @@
 .hero {
-  padding: 96px 0 112px;
+  padding: 140px 0 160px;
   background-color: var(--white);
   background-size: cover;
   background-position: center;
@@ -10,7 +10,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.7);
   pointer-events: none;
 }
 
@@ -59,13 +59,21 @@
 
 .hero__note {
   font-size: 12px;
-  color: var(--gray-300);
+  color: var(--gray-500);
   margin-top: 14px;
   letter-spacing: 0.01em;
 }
 
 @media (max-width: 768px) {
-  .hero { padding: 56px 0 72px; }
-  .hero__title { letter-spacing: -1px; }
+  .hero { padding: 72px 0 88px; }
+  .hero__title { letter-spacing: -0.5px; }
   .hero__sub { font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 56px 0 72px; }
+  .hero__title { font-size: clamp(28px, 8vw, 40px); }
+  .hero__sub { font-size: 15px; max-width: 100%; }
+  .hero__actions { flex-direction: column; width: 100%; }
+  .hero__actions .btn { width: 100%; }
 }
