@@ -20,7 +20,7 @@ const paths = [
     label: 'Zakladám firmu',
     badge: 'Najčastejší prípad',
     problems: [
-      { type: 'warning', text: 'Neviem, kde začať — každý mi hovorí niečo iné.' },
+      { type: 'warning', text: 'Neviem, kde začať - každý mi hovorí niečo iné.' },
       { type: 'warning', text: 'Strácam týždne behom po úradoch a stále nič.' },
       { type: 'ok', text: 'Chcem mať firmu hotovú rýchlo a bez zbytočného stresu.' },
     ],

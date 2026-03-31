@@ -4,7 +4,7 @@ const rows = [
   { label: 'Výkazy', old: 'Raz ročne, papierovo, neskoro', new: 'Real-time prehľad kedykoľvek' },
   { label: 'Dane', old: 'Reaktívne, keď je problém', new: 'Proaktívne, pred termínom' },
   { label: 'Komunikácia', old: 'Email, čakáte dni', new: 'Odpoveď do 24h, dedikovaný kontakt' },
-  { label: 'Reporting', old: 'Žiadny', new: 'Mesačné reporty na váš biznis' },
+  { label: 'Reporting', old: 'Žiadny', new: 'Mesačné reporty pre Váš biznis' },
   { label: 'Zakladanie', old: 'Sami na úradoch', new: 'My zariadime všetko' },
 ]
 
