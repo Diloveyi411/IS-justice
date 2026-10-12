@@ -100,6 +100,23 @@
   font-weight: 500;
 }
 
+.founder__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+  transition: color 0.3s;
+}
+.founder__link span { transition: transform 0.3s ease; }
+.founder__link:hover { color: var(--accent); }
+.founder__link:hover span { transform: translate(2px, -2px); }
+.founder__link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
 .founder__desc {
   font-size: 13px;
   color: var(--gray-500);

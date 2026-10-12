@@ -45,7 +45,7 @@ const secondary = [
     subtitle: 'Odborné krytie vášho podnikania',
     price: '60',
     unit: '',
-    features: ['Daňové priznania', 'Individuálne poradenstvo', 'Administratíva'],
+    features: ['Daňové priznania', 'Konzultácie 75 € / hod', 'Administratíva'],
     cta: 'Zobraziť detaily',
     ctaStyle: 'btn-secondary',
   },
@@ -133,6 +133,15 @@ export default function Pricing() {
             </div>
           ))}
         </div>
+
+        <a href="https://usfirma.sk/" target="_blank" rel="noopener" className="pricing__card pricing__card--secondary pricing__partner">
+          <div className="pricing__partner-body">
+            <span className="pricing__tag">Odporúčaný partner</span>
+            <p className="pricing__name">Potrebujete americkú firmu?</p>
+            <p className="pricing__partner-text">Založenie US LLC pre slovenských podnikateľov odporúčame cez usfirma.sk.</p>
+          </div>
+          <span className="btn btn-accent-outline pricing__partner-cta">usfirma.sk <span aria-hidden="true">→</span></span>
+        </a>
 
         <div className="pricing__trust">
           <span>✓ Bez záväzkov</span>
