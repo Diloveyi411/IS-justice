@@ -21,7 +21,7 @@ export default function Navbar() {
         </ul>
 
         <a href="#audit" className="btn btn-primary navbar__cta">
-          Konzultácia zdarma
+          15-min konzultácia zdarma
         </a>
 
         <button

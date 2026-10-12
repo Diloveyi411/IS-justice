@@ -28,7 +28,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 16px;
 }
 
 .pricing__card {
@@ -196,6 +196,42 @@
   color: var(--on-accent);
 }
 
+/* Partner link (usfirma.sk) */
+.pricing__partner {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+.pricing__partner:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.pricing__partner-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pricing__partner-text {
+  font-size: 14px;
+  color: var(--gray-700);
+}
+.pricing__partner-cta {
+  flex-shrink: 0;
+}
+.pricing__partner-cta span {
+  transition: transform 0.3s ease;
+}
+.pricing__partner:hover .pricing__partner-cta {
+  background: var(--accent-gradient);
+  border-color: transparent;
+  color: var(--on-accent);
+}
+.pricing__partner:hover .pricing__partner-cta span {
+  transform: translateX(4px);
+}
+
 /* Trust bar */
 .pricing__trust {
   display: flex;
@@ -267,6 +303,7 @@
 
 @media (max-width: 600px) {
   .pricing__trust { flex-direction: column; align-items: center; gap: 12px; }
+  .pricing__partner { flex-direction: column; align-items: stretch; gap: 20px; }
 }
 
 @media (max-width: 600px) {

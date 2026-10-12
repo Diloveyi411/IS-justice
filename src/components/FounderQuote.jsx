@@ -19,6 +19,7 @@ const members = [
     role: 'Konzultant pre kryptomeny a digitálne aktíva',
     desc: 'Pomáha klientom pochopiť a implementovať kryptomeny tak, aby boli bezpečné, legálne a prehľadne integrované do ich podnikania. Prepája technológiu s reálnym finančným a právnym fungovaním firmy.',
     photo: david,
+    link: { href: 'https://davidstancel.com/', label: 'davidstancel.com' },
     alt: 'MSc. David Stancel',
   },
 ]
@@ -40,6 +41,11 @@ export default function FounderQuote() {
                 <div className="founder__meta">
                   <p className="founder__name">{m.name}</p>
                   <p className="founder__role">{m.role}</p>
+                  {m.link && (
+                    <a href={m.link.href} target="_blank" rel="noopener" className="founder__link">
+                      {m.link.label} <span aria-hidden="true">↗</span>
+                    </a>
+                  )}
                 </div>
                 <p className="founder__desc">{m.desc}</p>
               </div>

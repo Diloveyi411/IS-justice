@@ -26,6 +26,7 @@
   color: var(--black);
   line-height: 1;
   margin-bottom: 8px;
+  white-space: nowrap;
 }
 
 .stats__label {

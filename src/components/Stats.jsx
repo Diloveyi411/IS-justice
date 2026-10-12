@@ -4,7 +4,7 @@ import './Stats.css'
 const stats = [
   { value: 15, decimals: 0, suffix: '+', label: 'rokov praxe', desc: 'Na slovenskom a medzinárodnom podnikateľskom trhu.' },
   { value: 450, decimals: 0, suffix: '+', label: 'klientov', desc: 'Pomohli sme im zvýšiť zisky a znížiť daňové riziko.' },
-  { value: 1.2, decimals: 1, suffix: 'M €', label: 'spravených financií', desc: 'Ročne prechádzajú naším systémom.' },
+  { value: 10, decimals: 0, suffix: 'M €+', label: 'ročné tržby klientov', desc: 'Súhrnné tržby firiem, ktorým vedieme účtovníctvo.' },
 ]
 
 const format = (n, decimals) => n.toFixed(decimals).replace('.', ',')
