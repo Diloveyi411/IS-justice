@@ -49,7 +49,7 @@
   padding: 0 16px;
 }
 .comparison__head-cell:first-child { padding-left: 0; color: transparent; }
-.comparison__head-cell--old { color: rgba(255,255,255,0.3); }
+.comparison__head-cell--old { color: rgba(255,255,255,0.5); }
 .comparison__head-cell--new { color: var(--accent); }
 
 .comparison__row {
@@ -74,7 +74,7 @@
   line-height: 1.5;
   padding: 0 16px;
 }
-.comparison__cell--old { color: rgba(255,255,255,0.3); }
+.comparison__cell--old { color: rgba(255,255,255,0.5); }
 .comparison__cell--new { color: rgba(255,255,255,0.85); }
 
 .comparison__x { color: #EF4444; margin-right: 8px; }
@@ -102,4 +102,8 @@
   .comparison__row { grid-template-columns: 1fr; gap: 6px; padding: 16px 20px; }
   .comparison__label { color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
   .comparison__cell { padding: 0; }
+}
+
+@media (max-width: 600px) {
+  .comparison { padding: 72px 0; }
 }

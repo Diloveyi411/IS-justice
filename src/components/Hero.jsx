@@ -7,8 +7,8 @@ export default function Hero() {
       <div className="container hero__inner">
         <div className="hero__content">
           <h1 className="hero__title">
-            Majte pod kontrolou<br />
-            financie <em className="metal-text metal-text--dark">aj právne riziká</em><br />
+            Majte pod kontrolou{' '}<br />
+            financie <em className="metal-text metal-text--dark">aj právne riziká</em>{' '}<br />
             svojho podnikania.
           </h1>
           <p className="hero__sub">

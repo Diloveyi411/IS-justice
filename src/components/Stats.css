@@ -38,7 +38,7 @@
 
 .stats__desc {
   font-size: 13px;
-  color: var(--gray-300);
+  color: var(--gray-500);
   max-width: 160px;
   margin: 0 auto;
   line-height: 1.6;
@@ -48,4 +48,8 @@
   .stats__grid { grid-template-columns: 1fr; }
   .stats__item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.06); padding: 36px 0; }
   .stats__item:last-child { border-bottom: none; }
+}
+
+@media (max-width: 600px) {
+  .stats { padding: 40px 0; }
 }

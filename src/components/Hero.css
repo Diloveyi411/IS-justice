@@ -91,21 +91,26 @@
 }
 
 @media (max-width: 768px) {
+  /* Rook sits in the top half, text below on solid dark */
   .hero {
-    min-height: auto;
-    padding: 96px 0 104px;
-    background-position: 78% center;
+    min-height: calc(100svh - 64px);
+    align-items: flex-end;
+    padding: 0 0 56px;
+    background-size: 230% auto;
+    background-position: 72% 0;
+    background-repeat: no-repeat;
   }
   .hero::before {
-    background: linear-gradient(0deg, rgba(8,8,8,0.92) 0%, rgba(8,8,8,0.78) 55%, rgba(8,8,8,0.55) 100%);
+    background: linear-gradient(180deg, rgba(8,8,8,0) 0%, rgba(8,8,8,0.15) 28%, rgba(8,8,8,0.9) 48%, #0B0B0B 58%);
   }
-  .hero__sub { font-size: 15px; }
+  .hero__inner { padding-top: 38vh; }
+  .hero__title br { display: none; }
+  .hero__sub { font-size: 15px; margin-bottom: 36px; }
 }
 
 @media (max-width: 480px) {
-  .hero { padding: 72px 0 80px; }
-  .hero__title { font-size: clamp(32px, 9vw, 42px); }
-  .hero__sub { font-size: 15px; max-width: 100%; }
+  .hero__title { font-size: clamp(32px, 9vw, 42px); margin-bottom: 20px; }
+  .hero__sub { max-width: 100%; }
   .hero__actions { flex-direction: column; width: 100%; }
   .hero__actions .btn { width: 100%; }
 }

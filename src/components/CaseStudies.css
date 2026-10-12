@@ -75,3 +75,7 @@
 @media (max-width: 768px) {
   .cases__grid { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 600px) {
+  .cases { padding: 72px 0; }
+}

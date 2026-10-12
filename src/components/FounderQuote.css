@@ -108,4 +108,9 @@
 
 @media (max-width: 768px) {
   .founder__grid { grid-template-columns: 1fr; }
+  .founder__photo-wrap { aspect-ratio: 4/3; }
+}
+
+@media (max-width: 600px) {
+  .founder { padding: 72px 0; }
 }

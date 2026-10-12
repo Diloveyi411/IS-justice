@@ -268,3 +268,7 @@
 @media (max-width: 600px) {
   .pricing__trust { flex-direction: column; align-items: center; gap: 12px; }
 }
+
+@media (max-width: 600px) {
+  .pricing { padding: 72px 0; }
+}
