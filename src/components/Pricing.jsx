@@ -147,6 +147,13 @@ export default function Pricing() {
           <p className="pricing__transparency-range metal-text">
             Väčšina klientov: 80 € – 450 € / mesačne.
           </p>
+          <div className="pricing__meter" aria-hidden="true">
+            <div className="pricing__meter-track"><div className="pricing__meter-fill" /></div>
+            <div className="pricing__meter-labels">
+              <span>80 € · základ</span>
+              <span>450 € · širší rozsah</span>
+            </div>
+          </div>
           <p className="pricing__transparency-text">
             Cena závisí od počtu účtovných zápisov a rozsahu služieb:
           </p>

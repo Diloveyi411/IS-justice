@@ -159,3 +159,32 @@ h1, h2, h3, h4 {
   font-weight: 500;
   font-family: var(--font);
 }
+
+/* ---------- Scroll motion ---------- */
+
+/* Fade-up reveal, staggered among siblings via --i */
+.fx-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(min(var(--i, 0), 6) * 90ms);
+}
+.fx-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Curtain: the next section opens from an inset rounded panel to full width */
+.fx-curtain { --enter: 1; }
+.fx-curtain--dark { background: #0A0A0A; }
+.fx-curtain--light { background: var(--gray-50); }
+.fx-curtain > * {
+  clip-path: inset(0 calc((1 - var(--enter)) * 6%) round calc((1 - var(--enter)) * 36px) calc((1 - var(--enter)) * 36px) 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-reveal { opacity: 1; transform: none; transition: none; }
+  .fx-curtain > * { clip-path: none; }
+}

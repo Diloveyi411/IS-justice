@@ -9,21 +9,28 @@ import CaseStudies from './components/CaseStudies'
 import FounderQuote from './components/FounderQuote'
 import LeadForm from './components/LeadForm'
 import Footer from './components/Footer'
+import useScrollFx from './hooks/useScrollFx'
 
 export default function App() {
+  useScrollFx()
+
   return (
     <>
       <Navbar />
       <Hero />
       <Comparison />
-      <Services />
+      <div className="fx-curtain fx-curtain--dark" data-fx>
+        <Services />
+      </div>
       <Stats />
       <Pricing />
       <CaseStudies />
       <FounderQuote />
       <PathSelector />
       <LeadForm />
-      <Footer />
+      <div className="fx-curtain fx-curtain--light" data-fx>
+        <Footer />
+      </div>
     </>
   )
 }

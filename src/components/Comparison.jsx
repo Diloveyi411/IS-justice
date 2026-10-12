@@ -29,10 +29,10 @@ export default function Comparison() {
             <div key={i} className="comparison__row">
               <div className="comparison__label">{row.label}</div>
               <div className="comparison__cell comparison__cell--old">
-                <span className="comparison__x">✕</span>{row.old}
+                <span className="comparison__x">✕</span><span className="comparison__old-text">{row.old}</span>
               </div>
               <div className="comparison__cell comparison__cell--new">
-                <span className="comparison__check">✓</span>{row.new}
+                <span className="comparison__check">✓</span><span>{row.new}</span>
               </div>
             </div>
           ))}
