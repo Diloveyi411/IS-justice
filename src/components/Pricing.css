@@ -237,11 +237,26 @@
   margin-bottom: 8px;
 }
 
+.pricing__transparency-list {
+  list-style: none;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  margin: 8px 0 20px;
+  font-size: 14px;
+  color: var(--gray-700);
+}
+.pricing__transparency-list li {
+  display: flex;
+  gap: 10px;
+}
+
 .pricing__transparency-note {
   font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--gray-300);
+  color: var(--gray-500);
   font-weight: 500;
 }
 

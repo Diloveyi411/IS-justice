@@ -9,15 +9,21 @@ const cases = [
   },
   {
     tag: 'S.R.O.',
-    title: 'Zakladanie s.r.o. za 5 dní',
+    title: 'Zakladanie s.r.o. rýchlo a operatívne',
     result: 'Žiadne fronty na úradoch',
     desc: 'Zaregistrovali sme spoločnosť, zriadili účtovníctvo a nastavili mzdovú agendu.',
   },
   {
     tag: 'Mediácia',
     title: 'Obchodný spor vyriešený mimosúdne',
-    result: 'Úspora 12 000 € na súdnych trovách',
+    result: 'Úspora na súdnych trovách',
     desc: 'Mediáciou sme vyriešili spor medzi obchodnými partnermi bez súdu.',
+  },
+  {
+    tag: 'Mediácia · Rodinné právo',
+    title: 'Úprava styku s maloletými deťmi',
+    result: 'Dobrá dohoda vytvára duševnú pohodu',
+    desc: 'Mediáciou sme pomohli rodičom dohodnúť sa na úprave styku s deťmi bez súdneho sporu.',
   },
 ]
 

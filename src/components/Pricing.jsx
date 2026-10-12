@@ -30,7 +30,7 @@ const main = [
     tag: 'Správa zamestnancov',
     title: 'Mzdy a Personalistika',
     subtitle: 'Kompletná správa zamestnancov',
-    price: '10',
+    price: '12',
     unit: '/ úkon',
     features: ['Spracovanie miezd', 'Pracovné zmluvy', 'Komunikácia so SP a ZP'],
     cta: 'Zobraziť detaily',
@@ -43,7 +43,7 @@ const secondary = [
   {
     title: 'Daňové a Poradenské Služby',
     subtitle: 'Odborné krytie vášho podnikania',
-    price: '30',
+    price: '60',
     unit: '',
     features: ['Daňové priznania', 'Individuálne poradenstvo', 'Administratíva'],
     cta: 'Zobraziť detaily',
@@ -59,6 +59,14 @@ const secondary = [
     cta: 'Konzultovať riešenie',
     ctaStyle: 'btn-accent-outline',
   },
+]
+
+const extras = [
+  'Evidencia a spracovanie zálohových odberateľských faktúr',
+  'Evidencia a spracovanie zálohových dodávateľských faktúr',
+  'Kalkulácia dane z finančných transakcií (DFT)',
+  'Spracovanie a podanie podkladov k DFT',
+  'Evidencia a tvorba dokladov vo VRP',
 ]
 
 export default function Pricing() {
@@ -137,10 +145,18 @@ export default function Pricing() {
             Každému klientovi nastavujeme cenu individuálne podľa objemu a potrieb.
           </p>
           <p className="pricing__transparency-range metal-text">
-            Väčšina klientov: 80€ – 250€ / mesačne.
+            Väčšina klientov: 80 € – 450 € / mesačne.
           </p>
+          <p className="pricing__transparency-text">
+            Cena závisí od počtu účtovných zápisov a rozsahu služieb:
+          </p>
+          <ul className="pricing__transparency-list">
+            {extras.map((e, i) => (
+              <li key={i}><span className="pricing__check">✓</span>{e}</li>
+            ))}
+          </ul>
           <p className="pricing__transparency-note">
-            Presná cena závisí od objemu. Pripravíme vám ponuku do 24h.
+            Pripravíme vám presnú ponuku do 24h.
           </p>
         </div>
       </div>
