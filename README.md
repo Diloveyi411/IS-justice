@@ -1,16 +1,33 @@
-# React + Vite
+# IS Justice — Web Redesign
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Klient:** IS Justice Servis s.r.o. (JUDr. Ivana Stancelová)
+**Status:** ONLINE (luxury redesign) — https://is-justice.vercel.app
+**Repo:** https://github.com/Diloveyi411/IS-justice
+**Stack:** React + Vite, single-page, hash routing
 
-Currently, two official plugins are available:
+## Otvorené
+- [ ] Overiť s klientkou, čo obsahuje 15-minútová konzultácia zdarma
+- [ ] Napojiť kontaktný formulár (teraz nikam neodosiela)
+- [ ] Karty, porovnávacia tabuľka a štítky: tenké linky namiesto šedých kariet
+- [ ] Animácie: živý hero, šachové súradnice, ťah vežou pri scrollovaní
+- [ ] Logo — open-ended, zasielame návrhy, rokujeme (`is-justice-logo.svg` = geometrický návrh)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Logo — stav
+- Bubbi má návrh za ktorým stojí: `~/Desktop/PROJECTS/Logo Ivana/Group 5.svg`
+- Klientka chce niečo **jednoduchšie, geometrické**
+- Proces: Bubbi zasiela návrhy/nápady → klientka reaguje → iterácia
+- Naučená zručnosť: tvorba log vo Figme
 
-## React Compiler
+## Čo bolo urobené
+- UX audit pôvodnej stránky (10 problémov)
+- Redesign: positioning, hero, services, pricing, lead form
+- Celý web implementovaný v React + Vite
+- Luxury redesign (2026-10-12): šachový hero (veža), bronzový akcent #9A6236 s metalickým odleskom, Castoro (nadpisy, najbližšie k písmu loga) + General Sans (text), tmavý navbar, CTA zjednotené na „15-minútová konzultácia zdarma“
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Nasadenie
+- Vercel projekt `is-justice`, auto-deploy z `origin/main`
+- Ukážky z dizajnového procesu sú lokálne v `explorations/` (mimo gitu)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Portfolio
+Detaily a case study: `PORTFOLIO.md`
+Screenshoty: `projects/Drahoslava.com/portfolio-pipeline/assets/is-justice/`
