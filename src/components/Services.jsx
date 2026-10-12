@@ -14,7 +14,6 @@ export default function Services() {
     <section className="services" id="services">
       <div className="container">
         <div className="services__header">
-          <p className="eyebrow">Naše služby</p>
           <h2 className="services__heading">
             Končí éra<br />rozhodovania naslepo.
           </h2>

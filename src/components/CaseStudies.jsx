@@ -26,7 +26,6 @@ export default function CaseStudies() {
     <section className="cases" id="cases">
       <div className="container">
         <div className="cases__header">
-          <p className="eyebrow">Prípadové štúdie</p>
           <h2 className="cases__heading">Výsledky, ktoré hovoria za nás</h2>
         </div>
         <div className="cases__grid">

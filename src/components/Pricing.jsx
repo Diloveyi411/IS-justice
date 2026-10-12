@@ -57,7 +57,7 @@ const secondary = [
     priceLabel: 'Fixné balíky',
     features: ['Zakladanie spoločností', 'Ready-made firmy', 'Likvidácia firiem'],
     cta: 'Konzultovať riešenie',
-    ctaStyle: 'btn-orange-outline',
+    ctaStyle: 'btn-accent-outline',
   },
 ]
 
@@ -65,7 +65,6 @@ export default function Pricing() {
   return (
     <section className="pricing" id="pricing">
       <div className="container">
-        <p className="eyebrow">Cenník</p>
         <h2 className="pricing__title">Transparentné ceny.<br />Žiadne prekvapenia.</h2>
 
         <div className="pricing__main">
@@ -137,7 +136,7 @@ export default function Pricing() {
           <p className="pricing__transparency-text">
             Každému klientovi nastavujeme cenu individuálne podľa objemu a potrieb.
           </p>
-          <p className="pricing__transparency-range">
+          <p className="pricing__transparency-range metal-text">
             Väčšina klientov: 80€ – 250€ / mesačne.
           </p>
           <p className="pricing__transparency-note">

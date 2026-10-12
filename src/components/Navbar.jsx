@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './Navbar.css'
-import logo from '../assets/logo.svg'
+import logo from '../assets/logo-footer.svg'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -17,11 +17,11 @@ export default function Navbar() {
           <li><a href="#pricing" onClick={() => setMenuOpen(false)}>Cenník</a></li>
           <li><a href="#cases" onClick={() => setMenuOpen(false)}>Prípadové štúdie</a></li>
           <li><a href="#about" onClick={() => setMenuOpen(false)}>O nás</a></li>
-          <li><a href="#path" onClick={() => setMenuOpen(false)}>Podnikatelia</a></li>
+          <li><a href="#path" onClick={() => setMenuOpen(false)}>Vaša situácia</a></li>
         </ul>
 
-        <a href="#audit" className="btn-primary navbar__cta">
-          Začni 15-min audit zdarma
+        <a href="#audit" className="btn btn-primary navbar__cta">
+          Konzultácia zdarma
         </a>
 
         <button

@@ -27,7 +27,6 @@ export default function FounderQuote() {
   return (
     <section className="founder" id="about">
       <div className="container">
-        <p className="eyebrow">Náš tím</p>
 
         <div className="founder__grid">
           {members.map((m, i) => (

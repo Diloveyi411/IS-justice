@@ -5,13 +5,14 @@
 }
 
 .pricing__title {
-  font-size: clamp(28px, 3vw, 42px);
-  font-weight: 900;
-  letter-spacing: -1.5px;
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
   line-height: 1.1;
   margin-top: 12px;
   margin-bottom: 56px;
   color: var(--black);
+  font-family: var(--font-display);
 }
 
 /* 3-column main grid */
@@ -42,18 +43,18 @@
   transition: box-shadow 0.25s, border-color 0.25s, transform 0.2s;
 }
 .pricing__card:hover {
-  border-color: var(--orange);
-  box-shadow: 0 0 0 1px var(--orange), 0 8px 40px rgba(255,140,0,0.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 8px 40px rgba(158,104,56,0.1);
   transform: translateY(-2px);
 }
 
 .pricing__card--featured {
-  background: var(--orange-pale);
-  border-color: var(--orange);
-  box-shadow: 0 0 0 1px var(--orange), 0 8px 32px rgba(255,140,0,0.12);
+  background: var(--accent-pale);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 8px 32px rgba(158,104,56,0.12);
 }
 .pricing__card--featured:hover {
-  box-shadow: 0 0 0 1px var(--orange), 0 12px 48px rgba(255,140,0,0.22);
+  box-shadow: 0 0 0 1px var(--accent), 0 12px 48px rgba(158,104,56,0.22);
 }
 
 .pricing__card--secondary {
@@ -64,10 +65,10 @@
   position: absolute;
   top: -12px;
   left: 24px;
-  background: var(--orange);
-  color: var(--white);
+  background: var(--accent-gradient);
+  color: var(--on-accent);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 500;
   padding: 4px 12px;
   border-radius: 20px;
   letter-spacing: 0.04em;
@@ -75,18 +76,19 @@
 
 .pricing__tag {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--accent);
 }
 
 .pricing__name {
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
   color: var(--black);
   line-height: 1.2;
+  font-family: var(--font-display);
 }
 
 .pricing__sub {
@@ -106,7 +108,7 @@
 
 .pricing__label {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--gray-500);
@@ -120,16 +122,16 @@
 
 .pricing__amount {
   font-family: var(--font-display);
-  font-size: 40px;
-  font-weight: 900;
-  letter-spacing: -2px;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
   color: var(--black);
   line-height: 1;
 }
 
 .pricing__amount--custom {
-  font-size: 32px;
-  letter-spacing: -1px;
+  font-size: 28px;
+  letter-spacing: -0.01em;
 }
 
 .pricing__unit {
@@ -162,7 +164,7 @@
 }
 
 .pricing__check {
-  color: var(--orange);
+  color: var(--accent);
   font-weight: 700;
   flex-shrink: 0;
   font-size: 13px;
@@ -182,16 +184,16 @@
   width: 100%;
 }
 
-.btn-orange-outline {
+.btn-accent-outline {
   background: transparent;
-  color: var(--orange);
-  border: 1.5px solid var(--orange);
-  font-family: var(--font-display);
-  font-weight: 600;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  font-family: var(--font);
+  font-weight: 500;
 }
-.btn-orange-outline:hover {
-  background: var(--orange);
-  color: var(--white);
+.btn-accent-outline:hover {
+  background: var(--accent-gradient); border-color: transparent;
+  color: var(--on-accent);
 }
 
 /* Trust bar */
@@ -207,7 +209,7 @@
 
 .pricing__trust span {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--gray-500);
 }
 
@@ -228,10 +230,10 @@
 
 .pricing__transparency-range {
   font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 900;
-  letter-spacing: -1px;
-  color: var(--orange);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--accent);
   margin-bottom: 8px;
 }
 
@@ -240,7 +242,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--gray-300);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @media (max-width: 900px) {

@@ -34,7 +34,6 @@ export default function PathSelector() {
     <section className="path" id="path">
       <div className="container">
         <div className="path__header">
-          <p className="eyebrow">Ktorá cesta je Vaša?</p>
           <h2 className="path__title">Vyberte svoju situáciu</h2>
           <p className="path__sub">Dostanete riešenie na mieru.</p>
         </div>

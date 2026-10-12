@@ -13,7 +13,6 @@ export default function Comparison() {
     <section className="comparison">
       <div className="container">
         <div className="comparison__header">
-          <p className="eyebrow comparison__eyebrow">Náš pohľad na vec</p>
           <h2 className="comparison__title">
             Prečo väčšina firiem robí<br />chyby v účtovníctve
           </h2>
@@ -24,7 +23,7 @@ export default function Comparison() {
           <div className="comparison__head">
             <div className="comparison__head-cell"></div>
             <div className="comparison__head-cell comparison__head-cell--old">Tradičný prístup</div>
-            <div className="comparison__head-cell comparison__head-cell--new">IS Justice</div>
+            <div className="comparison__head-cell comparison__head-cell--new metal-text metal-text--dark">IS Justice</div>
           </div>
           {rows.map((row, i) => (
             <div key={i} className="comparison__row">

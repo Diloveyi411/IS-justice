@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -7,10 +8,14 @@
 }
 
 :root {
-  --orange: #FF8C00;
-  --orange-hover: #E07D00;
-  --orange-pale: #FFF7ED;
-  --orange-gradient: linear-gradient(135deg, #FF8C00 0%, #FFB347 100%);
+  --accent: #9A6236;
+  --accent-hover: #7E4E2A;
+  --accent-pale: #F7EFE7;
+  --accent-light: #D19A68;
+  --on-accent: #FBF3EA;
+  --accent-gradient: linear-gradient(110deg, #82512C 0%, #9A6236 45%, #AE7646 60%, #8E5A31 100%);
+  --metal-text: linear-gradient(110deg, #8A5A30 0%, #A86F3E 35%, #F6D3AE 48%, #A86F3E 60%, #8A5A30 100%);
+  --metal-text-dark: linear-gradient(110deg, #B07A48 0%, #C98F5C 35%, #FFE1C0 48%, #C98F5C 60%, #B07A48 100%);
   --black: #0A0A0A;
   --gray-900: #111111;
   --gray-700: #2D2D2D;
@@ -19,8 +24,8 @@
   --gray-100: #F7F7F7;
   --gray-50: #FAFAFA;
   --white: #FFFFFF;
-  --font: 'Inter', system-ui, sans-serif;
-  --font-display: 'DM Sans', system-ui, sans-serif;
+  --font: 'General Sans', system-ui, sans-serif;
+  --font-display: 'Castoro', Georgia, serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -39,7 +44,8 @@ img { max-width: 100%; display: block; }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .container {
@@ -57,49 +63,77 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 13px 26px;
+  padding: 16px 28px;
   border-radius: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  font-family: var(--font-display);
-  letter-spacing: -0.2px;
-  transition: all 0.15s ease;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: var(--font);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
   cursor: pointer;
   border: none;
   white-space: nowrap;
 }
 
 .btn-primary {
-  background: var(--orange-gradient);
-  color: var(--white);
+  background: var(--accent-gradient);
+  color: var(--on-accent);
+  box-shadow: inset 0 1px 0 rgba(255, 235, 210, 0.18);
   position: relative;
   overflow: hidden;
+  transition: filter 0.3s ease;
 }
 .btn-primary::after {
   content: '';
   position: absolute;
   top: 0;
-  left: -75%;
+  left: -80%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.28), transparent);
+  background: linear-gradient(110deg, transparent, rgba(255, 228, 200, 0.28), transparent);
   transform: skewX(-20deg);
-  transition: left 0.45s ease;
+  transition: left 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .btn-primary:hover::after {
   left: 140%;
 }
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(255, 140, 0, 0.35);
+  filter: brightness(1.08);
+}
+
+/* Metallic bronze text with a slow light sweep */
+/* Italic accent in display font */
+.metal-text {
+  font-style: italic;
+  display: inline-block;
+  padding-right: 0.08em;
+  background-image: var(--metal-text);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: metal-sheen 5s ease-in-out infinite;
+}
+.metal-text--dark { background-image: var(--metal-text-dark); }
+
+@keyframes metal-sheen {
+  0%, 20% { background-position: 100% 0; }
+  70%, 100% { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metal-text { animation: none; background-position: 50% 0; }
 }
 
 .btn-secondary {
-  background: var(--gray-100);
-  color: var(--gray-700);
+  background: transparent;
+  color: var(--gray-900);
+  border: 1px solid rgba(11, 11, 11, 0.25);
 }
 .btn-secondary:hover {
-  background: #EBEBEB;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .eyebrow {
@@ -108,7 +142,7 @@ h1, h2, h3, h4 {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  background: var(--orange-gradient);
+  background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

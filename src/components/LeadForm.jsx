@@ -11,9 +11,8 @@ export default function LeadForm() {
   return (
     <section className="lead" id="audit">
       <div className="container lead__inner">
-        <p className="eyebrow">Bezplatný audit</p>
         <h2 className="lead__heading">Pripravení na kontrolu<br />nad biznisom?</h2>
-        <p className="lead__sub">Zanechajte kontakt a do 24 hodín preberieme váš aktuálny stav.</p>
+        <p className="lead__sub">Zanechajte kontakt a do 24 hodín sa vám ozveme s termínom konzultácie.</p>
 
         {sent ? (
           <div className="lead__success">
@@ -38,7 +37,7 @@ export default function LeadForm() {
               <input name="phone" type="tel" value={form.phone} onChange={handle} placeholder="Telefón" className="lead__input" />
             </div>
             <button type="submit" className="btn btn-primary lead__submit">
-              Získajte bezplatný audit
+              15-minútová konzultácia zdarma
             </button>
             <p className="lead__disclaimer">Bez záväzkov. Vaše údaje nezdieľame s tretími stranami.</p>
           </form>
