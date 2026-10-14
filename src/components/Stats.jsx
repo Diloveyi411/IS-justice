@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import './Stats.css'
 
 const stats = [
@@ -9,11 +9,18 @@ const stats = [
 
 const format = (n, decimals) => n.toFixed(decimals).replace('.', ',')
 
+// False in the prerendered HTML and while hydrating, true afterwards
+const noSubscribe = () => () => {}
+const useHydrated = () => useSyncExternalStore(noSubscribe, () => true, () => false)
+
 // Counts from 0 to the value once the number scrolls into view
 function CountUp({ value, decimals, suffix }) {
   const ref = useRef(null)
   const reduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  const [shown, setShown] = useState(reduced ? value : 0)
+  const [shown, setShown] = useState(0)
+  const hydrated = useHydrated()
+  // The prerendered HTML carries the real number so search engines read it
+  const display = reduced || !hydrated ? value : shown
 
   useEffect(() => {
     if (reduced || !ref.current) return
@@ -45,7 +52,7 @@ function CountUp({ value, decimals, suffix }) {
 
   return (
     <div className="stats__value" ref={ref} aria-label={`${format(value, decimals)}${suffix}`}>
-      {format(shown, decimals)}{suffix}
+      {format(display, decimals)}{suffix}
     </div>
   )
 }

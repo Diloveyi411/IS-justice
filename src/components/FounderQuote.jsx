@@ -1,6 +1,6 @@
 import './FounderQuote.css'
-import ivana from '../assets/ivana.png'
-import david from '../assets/david.png'
+import ivana from '../assets/ivana.webp'
+import david from '../assets/david.webp'
 
 const members = [
   {
