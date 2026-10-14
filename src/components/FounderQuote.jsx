@@ -1,6 +1,6 @@
 import './FounderQuote.css'
-import ivana from '../assets/ivana.png'
-import david from '../assets/david.png'
+import ivana from '../assets/ivana.webp'
+import david from '../assets/david.webp'
 import { t } from '../i18n'
 
 // People in the order of t.founder (eyebrow, quote, role, description)
