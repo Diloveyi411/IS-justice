@@ -74,7 +74,7 @@
   line-height: 1.5;
   padding: 0 16px;
 }
-.comparison__cell--old { color: rgba(255,255,255,0.5); }
+.comparison__cell--old { color: rgba(255,255,255,0.62); }
 .comparison__cell--new { color: rgba(255,255,255,0.85); }
 
 .comparison__x { color: #EF4444; margin-right: 8px; }
@@ -108,31 +108,19 @@
   .comparison { padding: 72px 0; }
 }
 
-/* Explanatory motion: the old way gets struck through, then ours slides in */
+/* Explanatory motion, driven by scroll: rows are struck through one by one
+   from the top (--r goes 0 -> 1 per row), then the IS Justice answer appears */
+.comparison__row { --r: 1; }
 .comparison__old-text {
-  position: relative;
-  transition: color 0.6s ease;
-  transition-delay: calc(min(var(--i, 0), 6) * 90ms + 0.45s);
+  color: rgba(255,255,255, calc(0.62 - var(--r) * 0.17));
+  background-image: linear-gradient(rgba(209,154,104,0.85), rgba(209,154,104,0.85));
+  background-repeat: no-repeat;
+  background-position: 0 58%;
+  background-size: calc(var(--r) * 100%) 1px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
-.comparison__old-text::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 55%;
-  height: 1px;
-  background: rgba(255,255,255,0.55);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.7s cubic-bezier(0.6, 0, 0.2, 1);
-  transition-delay: calc(min(var(--i, 0), 6) * 90ms + 0.35s);
+.comparison__cell--new {
+  opacity: clamp(0, calc(var(--r) * 2.5 - 1.2), 1);
+  transform: translateX(calc((1 - clamp(0, calc(var(--r) * 2.5 - 1.2), 1)) * 16px));
 }
-.fx-reveal .comparison__cell--new {
-  opacity: 0;
-  transform: translateX(18px);
-  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
-  transition-delay: calc(min(var(--i, 0), 6) * 90ms + 0.9s);
-}
-.is-in .comparison__old-text { color: rgba(255,255,255,0.36); }
-.is-in .comparison__old-text::after { transform: scaleX(1); }
-.fx-reveal.is-in .comparison__cell--new { opacity: 1; transform: none; }
