@@ -3,12 +3,13 @@ import './Hero.css'
 import heroBg from '../assets/hero-rook.webp'
 import heroBlur from '../assets/hero-rook-blur.webp'
 import heroRook from '../assets/hero-rook-cutout.webp'
+import { t } from '../i18n'
 
-// Scroll windows (0-1 of the pinned scroll) for each word in the sequence
+// Scroll windows (0-1 of the pinned scroll) for each word in the sequence; the words come from t.hero.words
 const words = [
-  { text: 'Financie.', from: 0.15, to: 0.33 },
-  { text: 'Dane.', from: 0.35, to: 0.53 },
-  { text: 'Právo.', from: 0.55, to: 0.73 },
+  { from: 0.15, to: 0.33 },
+  { from: 0.35, to: 0.53 },
+  { from: 0.55, to: 0.73 },
 ]
 const FINAL_FROM = 0.75
 
@@ -67,37 +68,37 @@ export default function Hero() {
         <div className="container hero__inner">
           <div className="hero__content">
             <h1 className="hero__title">
-              Majte pod kontrolou{' '}<br />
-              financie <em className="metal-text metal-text--dark">aj právne riziká</em>{' '}<br />
-              svojho podnikania.
+              {t.hero.title[0]}{' '}<br />
+              {t.hero.title[1]} <em className="metal-text metal-text--dark">{t.hero.title[2]}</em>{' '}<br />
+              {t.hero.title[3]}
             </h1>
             <p className="hero__sub">
-              Účtovníctvo, dane a právo pre podnikateľov, ktorí nechcú robiť rozhodnutia naslepo.
+              {t.hero.sub}
             </p>
             <div className="hero__actions">
               <a href="#audit" className="btn btn-primary">
-                15-minútová konzultácia zdarma
+                {t.hero.cta}
               </a>
               <a href="#services" className="btn hero__btn-ghost">
-                Naše služby
+                {t.hero.secondary}
               </a>
             </div>
-            <p className="hero__note">Odpoveď do 24 hodín. Bez záväzkov.</p>
+            <p className="hero__note">{t.hero.note}</p>
           </div>
 
           <div className="hero__words" aria-hidden="true">
-            {words.map((w) => (
-              <p key={w.text} className="hero__word" data-word>{w.text}</p>
+            {t.hero.words.map((w) => (
+              <p key={w} className="hero__word" data-word>{w}</p>
             ))}
             <p className="hero__word hero__word--final" data-final>
-              Jeden partner.<br />
-              <em className="metal-text metal-text--dark">Všetko pod kontrolou.</em>
+              {t.hero.final[0]}<br />
+              <em className="metal-text metal-text--dark">{t.hero.final[1]}</em>
             </p>
           </div>
         </div>
 
         <div className="hero__hint" aria-hidden="true">
-          <span>Scrollujte</span>
+          <span>{t.hero.hint}</span>
           <i />
         </div>
       </div>
