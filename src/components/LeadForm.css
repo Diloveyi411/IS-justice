@@ -73,6 +73,16 @@
   font-weight: 500;
 }
 
+.lead__submit:disabled { opacity: 0.7; cursor: wait; }
+
+.lead__botcheck { display: none; }
+
+.lead__error {
+  text-align: center;
+  font-size: 14px;
+  color: var(--accent-hover);
+}
+
 .lead__disclaimer {
   text-align: center;
   font-size: 12px;
