@@ -1,23 +1,13 @@
 import './FounderQuote.css'
 import ivana from '../assets/ivana.png'
 import david from '../assets/david.png'
+import { t } from '../i18n'
 
+// People in the order of t.founder (eyebrow, quote, role, description)
 const members = [
+  { name: 'JUDr. Ivana Stancelová', photo: ivana, alt: 'JUDr. Ivana Stancelová' },
   {
-    eyebrow: 'Zakladateľka hovorí',
-    quote: '"Riešila som stovky firiem, ktoré strácali kontrolu nad financiami. Problém nie je v číslach. Problém je, že ich nikto včas neukáže."',
-    name: 'JUDr. Ivana Stancelová',
-    role: 'Zakladateľka a strategická poradkyňa',
-    desc: 'Právnička a mediátorka s praxou od roku 2003. Pôsobila na Úrade práce, v zdravotníctve aj obchodných spoločnostiach. Od roku 2012 zapísaná mediátorka.',
-    photo: ivana,
-    alt: 'JUDr. Ivana Stancelová',
-  },
-  {
-    eyebrow: 'Konzultant hovorí',
-    quote: '"Firmy robia v kryptomenách rozhodnutia bez dát a bez systému. Výsledkom je zbytočné riziko a straty. Kryptomeny nemajú byť experiment. Majú byť riadená súčasť biznisu."',
     name: 'MSc. David Stancel',
-    role: 'Konzultant pre kryptomeny a digitálne aktíva',
-    desc: 'Pomáha klientom pochopiť a implementovať kryptomeny tak, aby boli bezpečné, legálne a prehľadne integrované do ich podnikania. Prepája technológiu s reálnym finančným a právnym fungovaním firmy.',
     photo: david,
     link: { href: 'https://davidstancel.com/', label: 'davidstancel.com' },
     alt: 'MSc. David Stancel',
@@ -36,18 +26,18 @@ export default function FounderQuote() {
                 <img src={m.photo} alt={m.alt} className="founder__photo" loading="lazy" />
               </div>
               <div className="founder__body">
-                <p className="eyebrow founder__eyebrow">{m.eyebrow}</p>
-                <blockquote className="founder__quote">{m.quote}</blockquote>
+                <p className="eyebrow founder__eyebrow">{t.founder[i].eyebrow}</p>
+                <blockquote className="founder__quote">{t.founder[i].quote}</blockquote>
                 <div className="founder__meta">
                   <p className="founder__name">{m.name}</p>
-                  <p className="founder__role">{m.role}</p>
+                  <p className="founder__role">{t.founder[i].role}</p>
                   {m.link && (
                     <a href={m.link.href} target="_blank" rel="noopener" className="founder__link">
                       {m.link.label} <span aria-hidden="true">↗</span>
                     </a>
                   )}
                 </div>
-                <p className="founder__desc">{m.desc}</p>
+                <p className="founder__desc">{t.founder[i].desc}</p>
               </div>
             </div>
           ))}
