@@ -1,92 +1,38 @@
 import './Pricing.css'
+import { lang, t } from '../i18n'
 
+const money = (amount) => (lang === 'en' ? `€${amount}` : `${amount}€`)
+
+// Prices and card styling, in the order of t.pricing.main / t.pricing.secondary
 const main = [
-  {
-    tag: 'Compliance základ',
-    title: 'Jednoduché účtovníctvo',
-    subtitle: 'Pre živnostníkov a menšie podnikanie',
-    price: '50',
-    unit: '/ mesiac',
-    features: ['Vedenie účtovníctva', 'Pravidelné výstupy', 'Osobne alebo online'],
-    cta: 'Získať presnú ponuku',
-    ctaStyle: 'btn-secondary',
-    featured: false,
-  },
-  {
-    tag: 'Kontrola + Reporting',
-    badge: 'Najčastejšia voľba',
-    title: 'Podvojné účtovníctvo',
-    subtitle: 'Pre firmy a platiteľov DPH',
-    price: '80',
-    unit: '/ mesiac',
-    highlight: 'Pre firmy, ktoré chcú mať prehľad a robiť rozhodnutia na základe dát.',
-    features: ['Kompletné vedenie agendy', 'Kvartálne výsledky', 'Konzultácie v cene'],
-    note: 'Transparentný systém: vyšší objem dokladov = nižšia cena za položku.',
-    cta: 'Získať presnú ponuku',
-    ctaStyle: 'btn-primary',
-    featured: true,
-  },
-  {
-    tag: 'Správa zamestnancov',
-    title: 'Mzdy a Personalistika',
-    subtitle: 'Kompletná správa zamestnancov',
-    price: '12',
-    unit: '/ úkon',
-    features: ['Spracovanie miezd', 'Pracovné zmluvy', 'Komunikácia so SP a ZP'],
-    cta: 'Zobraziť detaily',
-    ctaStyle: 'btn-secondary',
-    featured: false,
-  },
+  { price: '50', ctaStyle: 'btn-secondary', featured: false },
+  { price: '80', ctaStyle: 'btn-primary', featured: true },
+  { price: '12', ctaStyle: 'btn-secondary', featured: false },
 ]
 
 const secondary = [
-  {
-    title: 'Daňové a Poradenské Služby',
-    subtitle: 'Odborné krytie vášho podnikania',
-    price: '60',
-    unit: '',
-    features: ['Daňové priznania', 'Konzultácie 75 € / hod', 'Administratíva'],
-    cta: 'Zobraziť detaily',
-    ctaStyle: 'btn-secondary',
-  },
-  {
-    title: 'Zakladanie a Predaj Firiem',
-    subtitle: 'Individuálne riešenie pre komplexné prípady',
-    price: 'Na mieru',
-    unit: '',
-    priceLabel: 'Fixné balíky',
-    features: ['Zakladanie spoločností', 'Ready-made firmy', 'Likvidácia firiem'],
-    cta: 'Konzultovať riešenie',
-    ctaStyle: 'btn-accent-outline',
-  },
-]
-
-const extras = [
-  'Evidencia a spracovanie zálohových odberateľských faktúr',
-  'Evidencia a spracovanie zálohových dodávateľských faktúr',
-  'Kalkulácia dane z finančných transakcií (DFT)',
-  'Spracovanie a podanie podkladov k DFT',
-  'Evidencia a tvorba dokladov vo VRP',
+  { price: '60', ctaStyle: 'btn-secondary' },
+  { custom: true, ctaStyle: 'btn-accent-outline' },
 ]
 
 export default function Pricing() {
   return (
     <section className="pricing" id="pricing">
       <div className="container">
-        <h2 className="pricing__title">Transparentné ceny.<br />Žiadne prekvapenia.</h2>
+        <h2 className="pricing__title">{t.pricing.title[0]}<br />{t.pricing.title[1]}</h2>
 
         <div className="pricing__main">
-          {main.map((p, i) => (
-            <div key={i} className={`pricing__card ${p.featured ? 'pricing__card--featured' : ''}`}>
+          {t.pricing.main.map((p, i) => (
+            <div key={i} className={`pricing__card ${main[i].featured ? 'pricing__card--featured' : ''}`}>
               {p.badge && <span className="pricing__badge">{p.badge}</span>}
               <div className="pricing__tag">{p.tag}</div>
               <h3 className="pricing__name">{p.title}</h3>
               <p className="pricing__sub">{p.subtitle}</p>
 
               <div className="pricing__price-row">
-                <span className="pricing__label">Cena od</span>
+                <span className="pricing__label">{t.pricing.from}</span>
                 <div className="pricing__price">
-                  <span className="pricing__amount">{p.price}€</span>
+                  <span className="pricing__amount">{money(main[i].price)}</span>
                   <span className="pricing__unit">{p.unit}</span>
                 </div>
               </div>
@@ -101,25 +47,24 @@ export default function Pricing() {
 
               {p.note && <p className="pricing__note">{p.note}</p>}
 
-              <a href="#audit" className={`btn ${p.ctaStyle} pricing__cta`}>{p.cta}</a>
+              <a href="#audit" className={`btn ${main[i].ctaStyle} pricing__cta`}>{p.cta}</a>
             </div>
           ))}
         </div>
 
         <div className="pricing__secondary">
-          {secondary.map((p, i) => (
+          {t.pricing.secondary.map((p, i) => (
             <div key={i} className="pricing__card pricing__card--secondary">
               <h3 className="pricing__name">{p.title}</h3>
               <p className="pricing__sub">{p.subtitle}</p>
 
               <div className="pricing__price-row">
                 {p.priceLabel && <span className="pricing__label">{p.priceLabel}</span>}
-                {!p.priceLabel && <span className="pricing__label">Cena od</span>}
+                {!p.priceLabel && <span className="pricing__label">{t.pricing.from}</span>}
                 <div className="pricing__price">
-                  <span className={`pricing__amount ${p.price === 'Na mieru' ? 'pricing__amount--custom' : ''}`}>
-                    {p.price}{p.price !== 'Na mieru' ? '€' : ''}
+                  <span className={`pricing__amount ${secondary[i].custom ? 'pricing__amount--custom' : ''}`}>
+                    {secondary[i].custom ? p.price : money(secondary[i].price)}
                   </span>
-                  {p.unit && <span className="pricing__unit">{p.unit}</span>}
                 </div>
               </div>
 
@@ -129,50 +74,50 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <a href="#audit" className={`btn ${p.ctaStyle} pricing__cta`}>{p.cta}</a>
+              <a href="#audit" className={`btn ${secondary[i].ctaStyle} pricing__cta`}>{p.cta}</a>
             </div>
           ))}
         </div>
 
         <a href="https://usfirma.sk/" target="_blank" rel="noopener" className="pricing__card pricing__card--secondary pricing__partner">
           <div className="pricing__partner-body">
-            <span className="pricing__tag">Odporúčaný partner</span>
-            <p className="pricing__name">Potrebujete americkú firmu?</p>
-            <p className="pricing__partner-text">Založenie US LLC pre slovenských podnikateľov odporúčame cez usfirma.sk.</p>
+            <span className="pricing__tag">{t.pricing.partner.tag}</span>
+            <p className="pricing__name">{t.pricing.partner.title}</p>
+            <p className="pricing__partner-text">{t.pricing.partner.text}</p>
           </div>
           <span className="btn btn-accent-outline pricing__partner-cta">usfirma.sk <span aria-hidden="true">→</span></span>
         </a>
 
         <div className="pricing__trust">
-          <span>✓ Bez záväzkov</span>
-          <span>✓ Odpoveď do 24h</span>
-          <span>✓ Individuálny prístup</span>
+          {t.pricing.trust.map((item) => (
+            <span key={item}>{item}</span>
+          ))}
         </div>
 
         <div className="pricing__transparency">
           <p className="pricing__transparency-text">
-            Každému klientovi nastavujeme cenu individuálne podľa objemu a potrieb.
+            {t.pricing.individual}
           </p>
           <p className="pricing__transparency-range metal-text">
-            Väčšina klientov: 80 € – 450 € / mesačne.
+            {t.pricing.range}
           </p>
           <div className="pricing__meter" aria-hidden="true">
             <div className="pricing__meter-track"><div className="pricing__meter-fill" /></div>
             <div className="pricing__meter-labels">
-              <span>80 € · základ</span>
-              <span>450 € · širší rozsah</span>
+              <span>{t.pricing.meter[0]}</span>
+              <span>{t.pricing.meter[1]}</span>
             </div>
           </div>
           <p className="pricing__transparency-text">
-            Cena závisí od počtu účtovných zápisov a rozsahu služieb:
+            {t.pricing.dependsOn}
           </p>
           <ul className="pricing__transparency-list">
-            {extras.map((e, i) => (
+            {t.pricing.extras.map((e, i) => (
               <li key={i}><span className="pricing__check">✓</span>{e}</li>
             ))}
           </ul>
           <p className="pricing__transparency-note">
-            Pripravíme vám presnú ponuku do 24h.
+            {t.pricing.offer}
           </p>
         </div>
       </div>

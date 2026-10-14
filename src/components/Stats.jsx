@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import './Stats.css'
+import { t } from '../i18n'
 
+// Numbers per stat, in the order of t.stats (labels and descriptions)
 const stats = [
-  { value: 15, decimals: 0, suffix: '+', label: 'rokov praxe', desc: 'Na slovenskom a medzinárodnom podnikateľskom trhu.' },
-  { value: 450, decimals: 0, suffix: '+', label: 'klientov', desc: 'Pomohli sme im zvýšiť zisky a znížiť daňové riziko.' },
-  { value: 10, decimals: 0, suffix: 'M €+', label: 'ročné tržby klientov', desc: 'Súhrnné tržby firiem, ktorým vedieme účtovníctvo.' },
+  { value: 15, decimals: 0, suffix: '+' },
+  { value: 450, decimals: 0, suffix: '+' },
+  { value: 10, decimals: 0, suffix: 'M €+' },
 ]
 
 const format = (n, decimals) => n.toFixed(decimals).replace('.', ',')
@@ -14,7 +16,7 @@ const noSubscribe = () => () => {}
 const useHydrated = () => useSyncExternalStore(noSubscribe, () => true, () => false)
 
 // Counts from 0 to the value once the number scrolls into view
-function CountUp({ value, decimals, suffix }) {
+function CountUp({ value, decimals, prefix = '', suffix }) {
   const ref = useRef(null)
   const reduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const [shown, setShown] = useState(0)
@@ -51,8 +53,8 @@ function CountUp({ value, decimals, suffix }) {
   }, [value, reduced])
 
   return (
-    <div className="stats__value" ref={ref} aria-label={`${format(value, decimals)}${suffix}`}>
-      {format(display, decimals)}{suffix}
+    <div className="stats__value" ref={ref} aria-label={`${prefix}${format(value, decimals)}${suffix}`}>
+      {prefix}{format(display, decimals)}{suffix}
     </div>
   )
 }
@@ -63,9 +65,9 @@ export default function Stats() {
       <div className="container stats__grid">
         {stats.map((s, i) => (
           <div key={i} className="stats__item">
-            <CountUp value={s.value} decimals={s.decimals} suffix={s.suffix} />
-            <div className="stats__label">{s.label}</div>
-            <p className="stats__desc">{s.desc}</p>
+            <CountUp value={s.value} decimals={s.decimals} prefix={t.stats[i].prefix} suffix={t.stats[i].suffix ?? s.suffix} />
+            <div className="stats__label">{t.stats[i].label}</div>
+            <p className="stats__desc">{t.stats[i].desc}</p>
           </div>
         ))}
       </div>
