@@ -1,5 +1,5 @@
 import './Footer.css'
-import logoFooter from '../assets/logo-footer.svg'
+import logoFooter from '../assets/logo-servis-white.svg'
 
 export default function Footer() {
   return (
