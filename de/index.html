@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600&display=swap" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buchhaltung, Steuern und Recht in Galanta | IS Justice Servis</title>
-    <meta name="description" content="Buchhaltung, Steuern und Recht für Unternehmer, die keine Entscheidungen im Blindflug treffen wollen. IS-JUSTICE Servis s.r.o., Galanta, Slowakei, seit 2008." />
+    <meta name="description" content="Buchhaltung ab 50 € im Monat, Lohnabrechnung, Steuererklärungen, s.r.o.-Gründung und Mediation in Galanta, Slowakei. Seit 2008. 15 Min. Gratisberatung." />
     <link rel="canonical" href="https://isjustice.sk/de/" />
     <meta name="theme-color" content="#0B0B0B" />
     <link rel="alternate" hreflang="sk" href="https://isjustice.sk/" />
@@ -44,34 +44,207 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "AccountingService",
-        "@id": "https://isjustice.sk/#organization",
-        "name": "IS Justice Servis",
-        "legalName": "IS-JUSTICE Servis s.r.o.",
-        "url": "https://isjustice.sk/",
-        "logo": "https://isjustice.sk/favicon.png",
-        "image": "https://isjustice.sk/og-image.jpg",
-        "description": "Buchhaltung, Steuern und Recht für Unternehmer, die keine Entscheidungen im Blindflug treffen wollen.",
-        "foundingDate": "2008",
-        "founder": { "@type": "Person", "name": "JUDr. Ivana Stancelová" },
-        "email": "info@isjustice.sk",
-        "telephone": "+421908359990",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Puškinova 2474/100",
-          "postalCode": "924 01",
-          "addressLocality": "Galanta",
-          "addressCountry": "SK"
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "16:00"
-        },
-        "identifier": { "@type": "PropertyValue", "propertyID": "IČO", "value": "44287038" },
-        "taxID": "2022667394",
-        "vatID": "SK2022667394"
+        "@graph": [
+          {
+            "@type": "AccountingService",
+            "@id": "https://isjustice.sk/#organization",
+            "name": "IS Justice Servis",
+            "alternateName": [
+              "IS Justice",
+              "IS-JUSTICE Servis"
+            ],
+            "legalName": "IS-JUSTICE Servis s.r.o.",
+            "url": "https://isjustice.sk/",
+            "logo": "https://isjustice.sk/favicon.png",
+            "image": "https://isjustice.sk/og-image.jpg",
+            "description": "Buchhaltung, Steuern und Recht für Unternehmer, die keine Entscheidungen im Blindflug treffen wollen.",
+            "foundingDate": "2008",
+            "founder": {
+              "@id": "https://isjustice.sk/#ivana"
+            },
+            "employee": [
+              {
+                "@id": "https://isjustice.sk/#ivana"
+              },
+              {
+                "@id": "https://isjustice.sk/#david"
+              }
+            ],
+            "email": "info@isjustice.sk",
+            "telephone": "+421908359990",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Puškinova 2474/100",
+              "postalCode": "924 01",
+              "addressLocality": "Galanta",
+              "addressCountry": "SK"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 48.20018,
+              "longitude": 17.74248
+            },
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Galanta"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Bezirk Galanta"
+              },
+              {
+                "@type": "Country",
+                "name": "Slowakei"
+              }
+            ],
+            "priceRange": "€€",
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "08:00",
+              "closes": "16:00"
+            },
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "IČO",
+              "value": "44287038"
+            },
+            "taxID": "2022667394",
+            "vatID": "SK2022667394",
+            "knowsLanguage": [
+              "sk",
+              "en",
+              "de"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Leistungen und Preise",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Einfache Buchführung"
+                  },
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "minPrice": 50,
+                    "priceCurrency": "EUR",
+                    "unitText": "Monat"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Doppelte Buchführung"
+                  },
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "minPrice": 80,
+                    "priceCurrency": "EUR",
+                    "unitText": "Monat"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Lohn und Personal"
+                  },
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "minPrice": 12,
+                    "priceCurrency": "EUR",
+                    "unitText": "Vorgang"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Steuer- und Beratungsleistungen"
+                  },
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "minPrice": 60,
+                    "priceCurrency": "EUR"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Beratung"
+                  },
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "minPrice": 75,
+                    "priceCurrency": "EUR",
+                    "unitText": "Stunde",
+                    "unitCode": "HUR"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Gründung und Verkauf von Firmen"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Mediation"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://isjustice.sk/#ivana",
+            "name": "JUDr. Ivana Stancelová",
+            "honorificPrefix": "JUDr.",
+            "jobTitle": "Gründerin und strategische Beraterin",
+            "worksFor": {
+              "@id": "https://isjustice.sk/#organization"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://isjustice.sk/#david",
+            "name": "David Stancel",
+            "honorificPrefix": "MSc.",
+            "jobTitle": "Berater für Kryptowährungen und digitale Vermögenswerte",
+            "url": "https://davidstancel.com/",
+            "worksFor": {
+              "@id": "https://isjustice.sk/#organization"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://isjustice.sk/#website",
+            "url": "https://isjustice.sk/",
+            "name": "IS Justice Servis",
+            "inLanguage": [
+              "sk",
+              "en",
+              "de"
+            ],
+            "publisher": {
+              "@id": "https://isjustice.sk/#organization"
+            }
+          }
+        ]
       }
     </script>
   </head>
